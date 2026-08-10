@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* fashion rain k liye hai */
+@keyframes fall {
+
+  0% {
+    transform:
+    translateY(-100px)
+    rotate(0deg);
+
+    opacity:0;
+  }
+
+
+  20% {
+    opacity:1;
+  }
+
+
+  100% {
+
+    transform:
+    translateY(110vh)
+    rotate(360deg);
+
+    opacity:0;
+
+  }
+
+}
+
+
+.animate-fall {
+
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+/* Premium Navbar Effects */
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 40%;
+  height: 100%;
+  background: rgba(255,255,255,.25);
+  transform: skewX(-25deg);
+}
+
+.btn-shine:hover::before {
+  animation: shine .8s linear;
+}
+
+/* Navbar Blur */
+
+.glass-navbar{
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Link Hover */
+
+.nav-link{
+  position:relative;
+  transition:.35s;
+}
+
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0%;
+  height:2px;
+  background:#22d3ee;
+  transition:.35s;
+}
+
+.nav-link:hover::after{
+  width:100%;
+}
+
+.nav-link:hover{
+  color:#22d3ee;
+}
+
+/* Logo Animation */
+
+.logo-img{
+  transition:.5s;
+}
+
+.logo-img:hover{
+  transform:rotate(8deg) scale(1.1);
+}
+
+/* Dropdown */
+
+.dropdown{
+  animation:dropdown .35s ease;
+}
+
+@keyframes dropdown{
+
+0%{
+opacity:0;
+transform:translateY(-10px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}

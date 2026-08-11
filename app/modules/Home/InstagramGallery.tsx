@@ -214,7 +214,7 @@ images.map((img,index)=>(
 key={index}
 
 
-onClick={()=>router.push("/about")}
+onClick={()=>router.push("Collection")}
 
 
 className="
@@ -788,7 +788,7 @@ Follow our latest drops and exclusive fashion updates.
 
 <button
 
-onClick={()=>router.push("/about")}
+onClick={()=>router.push("Collection")}
 
 className="
 mt-6

@@ -13,7 +13,7 @@ export default function Navbar() {
     { name: "Home", link: "/" },
     { name: "About", link: "/About" },
     { name: "Collection", link: "/Collection" },
-    { name: "Videos", link: "/Videos" },
+    { name: "Video", link: "/Video" },
     { name: "Services", link: "/Services" },
     { name: "Lookbook", link: "/Lookbook" },
     { name: "Product Hero", link: "/ProductHero" },
@@ -104,128 +104,118 @@ export default function Navbar() {
 
 
 
-        {/* BUTTONS */}
+   {/* BUTTONS */}
 
-        <div className="hidden lg:flex items-center gap-3">
+<div className="hidden lg:flex items-center gap-3">
 
+  {/* LOGIN */}
 
-          {/* LOGIN */}
+  <div className="relative">
 
-          <div className="relative">
+    <button
+      onClick={() => {
+        setLoginOpen(!loginOpen);
+        setSignupOpen(false);
+      }}
+      className="
+        w-32
+        py-3
+        rounded-full
+        bg-gradient-to-r
+        from-cyan-500
+        to-blue-600
+        text-white
+        font-semibold
+        shadow-[0_10px_30px_rgba(6,182,212,0.45)]
+        hover:scale-105
+        transition-all
+        duration-300
+      "
+    >
+      Login
+    </button>
 
-            <button
-              onClick={()=>{
-                setLoginOpen(!loginOpen);
-                setSignupOpen(false);
-              }}
-              className="
-              w-32
-              py-3
-              rounded-full
-              bg-gradient-to-r
-              from-cyan-500
-              to-blue-600
-              text-white
-              font-semibold
-              shadow-[0_10px_30px_rgba(6,182,212,0.45)]
-              hover:scale-105
-              transition-all
-              duration-300
-              "
-            >
-              Login
-            </button>
+    {loginOpen && (
+      <div className="absolute right-0 mt-3 w-52 bg-black border border-cyan-400 rounded-xl shadow-xl overflow-hidden">
 
+        {/* User Login → ABOUT */}
+        <Link
+          href="/About"
+          className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
+          onClick={() => setLoginOpen(false)}
+        >
+          User Login
+        </Link>
 
-            {loginOpen && (
+        {/* Admin Login → ABOUT */}
+        <Link
+          href="/About"
+          className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
+          onClick={() => setLoginOpen(false)}
+        >
+          Admin Login
+        </Link>
 
-              <div className="absolute right-0 mt-3 w-52 bg-black border border-cyan-400 rounded-xl shadow-xl overflow-hidden">
+      </div>
+    )}
 
-                <Link
-                  href="/login"
-                  className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
-                >
-                  User Login
-                </Link>
-
-
-                <Link
-                  href="/admin-login"
-                  className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
-                >
-                  Admin Login
-                </Link>
-
-              </div>
-
-            )}
-
-          </div>
-
+  </div>
 
 
-          {/* SIGN UP */}
+  {/* SIGN UP */}
 
-          <div className="relative">
+  <div className="relative">
 
+    <button
+      onClick={() => {
+        setSignupOpen(!signupOpen);
+        setLoginOpen(false);
+      }}
+      className="
+        w-32
+        py-3
+        rounded-full
+        bg-gradient-to-r
+        from-cyan-500
+        to-blue-600
+        text-white
+        font-semibold
+        shadow-[0_10px_30px_rgba(6,182,212,0.45)]
+        hover:scale-105
+        transition-all
+        duration-300
+      "
+    >
+      Sign Up
+    </button>
 
-            <button
-              onClick={()=>{
-                setSignupOpen(!signupOpen);
-                setLoginOpen(false);
-              }}
+    {signupOpen && (
+      <div className="absolute right-0 mt-3 w-52 bg-black border border-cyan-400 rounded-xl shadow-xl overflow-hidden">
 
-              className="
-              w-32
-              py-3
-              rounded-full
-              bg-gradient-to-r
-              from-cyan-500
-              to-blue-600
-              text-white
-              font-semibold
-              shadow-[0_10px_30px_rgba(6,182,212,0.45)]
-              hover:scale-105
-              transition-all
-              duration-300
-              "
-            >
-              Sign Up
-            </button>
+        {/* User Sign Up → ABOUT */}
+        <Link
+          href="/About"
+          className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
+          onClick={() => setSignupOpen(false)}
+        >
+          User Sign Up
+        </Link>
 
+        {/* Seller Sign Up → ABOUT */}
+        <Link
+          href="/About"
+          className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
+          onClick={() => setSignupOpen(false)}
+        >
+          Seller Sign Up
+        </Link>
 
+      </div>
+    )}
 
-            {signupOpen && (
+  </div>
 
-              <div className="absolute right-0 mt-3 w-52 bg-black border border-cyan-400 rounded-xl shadow-xl overflow-hidden">
-
-
-                <Link
-                  href="/signup"
-                  className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
-                >
-                  User Sign Up
-                </Link>
-
-
-                <Link
-                  href="/seller-signup"
-                  className="block px-5 py-3 text-white hover:bg-cyan-500 transition"
-                >
-                  Seller Sign Up
-                </Link>
-
-
-              </div>
-
-            )}
-
-          </div>
-
-
-        </div>
-
-
+</div>
 
         {/* MOBILE BUTTON */}
 
